@@ -1,4 +1,4 @@
-# VS Code Plist Syntax Highlighting
+# VS Code Property List Syntax Highlighting
 
 This is a conversion of the [Property List (XML) TextMate grammar](https://github.com/textmate/property-list.tmbundle) to an injection grammar for XML. It also includes the code snippets from the TextMate bundle.
 
@@ -12,10 +12,10 @@ This is a conversion of the [Property List (XML) TextMate grammar](https://githu
 - Just configuration files, no binaries or scripts.
 
 ### Syntax Highlighting
-![Before/After](/img/syntax-highlighting.png)
+![Before/After](/resources/syntax-highlighting.png)
 
 ### Code Snippets
-![Code Snippets Preview](/img/code-snippets.gif)
+![Code Snippets Preview](/resources/code-snippets.gif)
 
 ## Configuration
 
