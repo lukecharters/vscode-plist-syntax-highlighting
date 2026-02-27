@@ -1,0 +1,9 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+TODO.md
+test-files/**
+scratch-files/**
+*.code-workspace
+.DS_Store
+CLAUDE.md

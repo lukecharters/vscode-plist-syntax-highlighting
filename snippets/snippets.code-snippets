@@ -1,0 +1,68 @@
+{
+	"array": {
+		"prefix": "array",
+		"body": "<array>\n\t$0\n</array>",
+		"description": "array tags",
+		"scope": "text.xml.plist"
+	},
+	"data": {
+		"prefix": "data",
+		"body": "<data>\n\t$1\n</data>",
+		"description": "data tags",
+		"scope": "text.xml.plist"
+	},
+	"date": {
+		"prefix": "date",
+		"body": "<date>${1:YYYY}${2/.+/-/}${2:MM}${3/.+/-/}${3:DD}${4/.+/T/}${4:hh}${5/.+/:/}${5:mm}${6/.+/:/}${6:ss}${4/.+/Z/}</date>",
+		"description": "date tags",
+		"scope": "text.xml.plist"
+	},
+	"dict": {
+		"prefix": "dict",
+		"body": "<dict>\n\t$0\n</dict>",
+		"description": "dict tags",
+		"scope": "text.xml.plist"
+	},
+	"f": {
+		"prefix": "f",
+		"body": "<false/>",
+		"description": "false tag",
+		"scope": "text.xml.plist"
+	},
+	"int": {
+		"prefix": "int",
+		"body": "<integer>$1</integer>",
+		"description": "integer tags",
+		"scope": "text.xml.plist"
+	},
+	"key": {
+		"prefix": "key",
+		"body": "<key>$1</key>",
+		"description": "key tags",
+		"scope": "text.xml.plist"
+	},
+	"plist": {
+		"prefix": "plist",
+		"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n$0\n</plist>",
+		"description": "plist header and tags",
+		"scope": "text.xml.plist"
+	},
+	"real": {
+		"prefix": "real",
+		"body": "<real>$1</real>",
+		"description": "real tags",
+		"scope": "text.xml.plist"
+	},
+	"str": {
+		"prefix": "str",
+		"body": "<string>$1</string>",
+		"description": "string tags",
+		"scope": "text.xml.plist"
+	},
+	"t": {
+		"prefix": "t",
+		"body": "<true/>",
+		"description": "true tag",
+		"scope": "text.xml.plist"
+	}
+}

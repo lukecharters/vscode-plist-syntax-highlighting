@@ -1,0 +1,48 @@
+{
+  "name": "vscode-plist-syntax-highlighting",
+  "displayName": "Plist Syntax Highlighting",
+  "description": "Syntax highlighting for XML Property List (plist) files",
+  "version": "1.0.0",
+  "publisher": "lukecharters",
+  "author": "Luke Charters",
+  "license": "MIT",
+  "icon": "./resources/icon.png",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  	"repository": {
+		"type": "git",
+		"url": "https://github.com/lukecharters/vscode-plist-syntax-highlighting"
+	},
+  "bugs": {
+    "url": "https://github.com/lukecharters/vscode-plist-syntax-highlighting/issues"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "Property List",
+    "plist",
+    "mobileconfig",
+    "xml"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "text.xml.plist",
+        "path": "./syntaxes/property-list-xml.json",
+        "injectTo": ["text.xml"],
+        "embeddedLanguages": {
+          "text.xml.plist": "xml"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "xml",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
