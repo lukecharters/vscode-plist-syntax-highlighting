@@ -2,7 +2,7 @@
   "name": "vscode-plist-syntax-highlighting",
   "displayName": "Property List Syntax Highlighting",
   "description": "Syntax highlighting for XML Property List (plist) files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "lukecharters",
   "author": "Luke Charters",
   "license": "MIT",
