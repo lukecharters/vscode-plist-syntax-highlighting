@@ -65,3 +65,8 @@ Nope, but the advantage of it being an injection grammar for XML means you can u
 ### 1.0.0
 
 Initial release
+
+## 1.0.1
+
+- README.md: Added marketplace link to for people viewing on GitHub.
+- README.md: Made link text larger for accessibility
