@@ -2,13 +2,14 @@
 
 This is a conversion of the [Property List (XML) TextMate grammar](https://github.com/textmate/property-list.tmbundle) to an injection grammar for XML. It also includes the code snippets from the TextMate bundle.
 
+[Marketplace link if you're reading this on GitHub.](https://marketplace.visualstudio.com/items?itemName=lukecharters.vscode-plist-syntax-highlighting)
 
 ## Features
 
 - Syntax highlighting for XML Property Lists
 - Code snippets for Property List headers and tags
 - Compatible with XML extensions
-- Compatible with Mike Cunneen's [Property List Editor (updated)](https://marketplace.visualstudio.com/items?itemName=MikeCunneen.cunneen-vscode-plist) and David Nicolson's [Binary Plist](https://marketplace.visualstudio.com/items?itemName=dnicolson.binary-plist)
+- Compatible with [Mike Cunneen's Property List Editor (updated)](https://marketplace.visualstudio.com/items?itemName=MikeCunneen.cunneen-vscode-plist) and [David Nicolson's Binary Plist](https://marketplace.visualstudio.com/items?itemName=dnicolson.binary-plist)
 - Just configuration files, no binaries or scripts.
 
 ### Syntax Highlighting
@@ -56,7 +57,7 @@ You can try setting `"editor.semanticHighlighting.enabled": false` or test with 
 
 ### Does this do formatting?
 
-Nope, but the advantage of it being an injection grammar for XML means you can use your XML formatter of choice. I recommend Red Hat's [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) extension.
+Nope, but the advantage of it being an injection grammar for XML means you can use your XML formatter of choice. I recommend [Red Hat's XML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml).
 
 ---
 ## Release Notes
