@@ -27,6 +27,13 @@
     "mobileconfig",
     "xml"
   ],
+  "scripts": {
+    "package": "vsce package",
+    "deploy": "vsce publish --packagePath *.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.1"
+  },
   "contributes": {
     "grammars": [
       {

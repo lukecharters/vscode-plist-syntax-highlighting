@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v1.0.1)"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -18,15 +24,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag || github.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Validate version
         run: |
-          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          TAG_REF="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag || github.ref_name }}"
+          TAG_VERSION="${TAG_REF#v}"
           PKG_VERSION=$(node -p "require('./package.json').version")
           if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
             echo "::error::Tag version ($TAG_VERSION) does not match package.json version ($PKG_VERSION)"
@@ -35,10 +47,26 @@ jobs:
           echo "VERSION=$TAG_VERSION" >> "$GITHUB_ENV"
 
       - name: Package extension
-        run: npx @vscode/vsce package
+        run: npm run package
 
       - name: Publish to VS Marketplace
-        run: npx @vscode/vsce publish --packagePath *.vsix
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if npm run deploy; then
+              exit 0
+            fi
+
+            if [ "$attempt" -lt 3 ]; then
+              sleep_seconds=$((attempt * 30))
+              echo "Publish failed on attempt $attempt. Retrying in ${sleep_seconds}s..."
+              sleep "$sleep_seconds"
+            fi
+          done
+
+          echo "::error::Failed to publish to VS Marketplace after 3 attempts"
+          exit 1
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
